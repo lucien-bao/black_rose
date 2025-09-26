@@ -14,6 +14,27 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^6.0.0
+  flutter_launcher_icons: "^0.14.4"
+
+# to use, run `dart run flutter_launcher_icons`
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: "assets/black_rose_black_bg.png"
+  remove_alpha_ios: true
+  image_path: "assets/black_rose.png"
+  min_sdk_android: 21 # android min sdk min:16, default 21
+  web:
+    generate: true
+    image_path: "assets/black_rose.png"
+    background_color: "#d600dc"
+    theme_color: "#d600dc"
+  windows:
+    generate: true
+    image_path: "assets/black_rose_large.png"
+    icon_size: 256 # min:48, max:256, default: 48
+  macos:
+    generate: true
+    image_path: "assets/black_rose_black_bg.png"
 
 flutter:
   uses-material-design: true
