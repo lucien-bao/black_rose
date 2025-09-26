@@ -1,5 +1,5 @@
 name: black_rose
-description: "A new Flutter project."
+description: "A (soon-to-be) polished MTG life and stat tracker."
 publish_to: 'none'
 version: 0.1.0
 
@@ -17,3 +17,79 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+  fonts:
+    - family: Alegreya Sans
+      fonts:
+        - asset: fonts/AlegreyaSans-Black.ttf
+          weight: 900
+        - asset: fonts/AlegreyaSans-BlackItalic.ttf
+          weight: 900
+          style: italic
+        - asset: fonts/AlegreyaSans-Bold.ttf
+          weight: 700
+        - asset: fonts/AlegreyaSans-BoldItalic.ttf
+          weight: 700
+          style: italic
+        - asset: fonts/AlegreyaSans-ExtraBold.ttf
+          weight: 800
+        - asset: fonts/AlegreyaSans-ExtraBoldItalic.ttf
+          weight: 800
+          style: italic
+        - asset: fonts/AlegreyaSans-Light.ttf
+          weight: 300
+        - asset: fonts/AlegreyaSans-LightItalic.ttf
+          weight: 300
+          style: italic
+        - asset: fonts/AlegreyaSans-Medium.ttf
+          weight: 500
+        - asset: fonts/AlegreyaSans-MediumItalic.ttf
+          weight: 500
+          style: italic
+        - asset: fonts/AlegreyaSans-Thin.ttf
+          weight: 100
+        - asset: fonts/AlegreyaSans-ThinItalic.ttf
+          weight: 100
+          style: italic
+        - asset: fonts/AlegreyaSans-Regular.ttf
+          weight: 400
+        - asset: fonts/AlegreyaSans-Italic.ttf
+          weight: 400
+          style: italic
+    - family: Alegreya Sans SC
+      fonts:
+        - asset: fonts/AlegreyaSansSC-Black.ttf
+          weight: 900
+        - asset: fonts/AlegreyaSansSC-BlackItalic.ttf
+          weight: 900
+          style: italic
+        - asset: fonts/AlegreyaSansSC-Bold.ttf
+          weight: 700
+        - asset: fonts/AlegreyaSansSC-BoldItalic.ttf
+          weight: 700
+          style: italic
+        - asset: fonts/AlegreyaSansSC-ExtraBold.ttf
+          weight: 800
+        - asset: fonts/AlegreyaSansSC-ExtraBoldItalic.ttf
+          weight: 800
+          style: italic
+        - asset: fonts/AlegreyaSansSC-Light.ttf
+          weight: 300
+        - asset: fonts/AlegreyaSansSC-LightItalic.ttf
+          weight: 300
+          style: italic
+        - asset: fonts/AlegreyaSansSC-Medium.ttf
+          weight: 500
+        - asset: fonts/AlegreyaSansSC-MediumItalic.ttf
+          weight: 500
+          style: italic
+        - asset: fonts/AlegreyaSansSC-Thin.ttf
+          weight: 100
+        - asset: fonts/AlegreyaSansSC-ThinItalic.ttf
+          weight: 100
+          style: italic
+        - asset: fonts/AlegreyaSansSC-Regular.ttf
+          weight: 400
+        - asset: fonts/AlegreyaSansSC-Italic.ttf
+          weight: 400
+          style: italic
