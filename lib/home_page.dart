@@ -33,19 +33,19 @@ class HomePage extends StatelessWidget {
             NewGameButton(),
             SizedBox(height: 20),
             MenuButton(
-              icon: const Icon(Icons.person, size: 35),
+              icon: Icons.person,
               text: 'Players',
               callbackFn: () => {},
             ),
             SizedBox(height: 20),
             MenuButton(
-              icon: const Icon(Icons.settings, size: 35),
+              icon: Icons.settings,
               text: 'Settings',
               callbackFn: () => {},
             ),
             SizedBox(height: 20),
             MenuButton(
-              icon: const Icon(Icons.question_mark, size: 35),
+              icon: Icons.question_mark,
               text: 'Help',
               callbackFn: () => {},
             ),
@@ -84,7 +84,7 @@ class MenuButton extends StatelessWidget {
     required this.callbackFn,
   });
 
-  final Icon icon;
+  final IconData icon;
   final String text;
   final void Function() callbackFn;
 
@@ -92,7 +92,7 @@ class MenuButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return FilledButton.tonalIcon(
       onPressed: callbackFn,
-      icon: icon,
+      icon: Icon(icon, size: 30),
       label: Text(
         text,
         style: TextStyle(fontSize: 35, fontFamily: 'Alegreya Sans SC'),
