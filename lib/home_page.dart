@@ -22,14 +22,33 @@ class HomePage extends StatelessWidget {
                   style: TextStyle(
                     fontWeight: FontWeight.w600,
                     fontSize: 50,
-                    fontFamily: "Alegreya Sans SC",
+                    fontFamily: 'Alegreya Sans SC',
                     color: const Color(0xffd600dc),
                   ),
                 ),
               ],
             ),
+
             SizedBox(height: 20),
             NewGameButton(),
+            SizedBox(height: 20),
+            MenuButton(
+              icon: const Icon(Icons.person, size: 35),
+              text: 'Players',
+              callbackFn: () => {},
+            ),
+            SizedBox(height: 20),
+            MenuButton(
+              icon: const Icon(Icons.settings, size: 35),
+              text: 'Settings',
+              callbackFn: () => {},
+            ),
+            SizedBox(height: 20),
+            MenuButton(
+              icon: const Icon(Icons.question_mark, size: 35),
+              text: 'Help',
+              callbackFn: () => {},
+            ),
           ],
         ),
       ),
@@ -51,7 +70,7 @@ class NewGameButton extends StatelessWidget {
       icon: const Icon(Icons.add, size: 35),
       label: Text(
         'New Game',
-        style: TextStyle(fontSize: 35, fontFamily: "Alegreya Sans SC"),
+        style: TextStyle(fontSize: 35, fontFamily: 'Alegreya Sans SC'),
       ),
     );
   }
@@ -71,12 +90,12 @@ class MenuButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FilledButton.icon(
+    return FilledButton.tonalIcon(
       onPressed: callbackFn,
       icon: icon,
       label: Text(
         text,
-        style: TextStyle(fontSize: 35, fontFamily: "Alegreya Sans SC"),
+        style: TextStyle(fontSize: 35, fontFamily: 'Alegreya Sans SC'),
       ),
     );
   }
