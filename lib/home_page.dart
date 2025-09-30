@@ -5,8 +5,6 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var colorScheme = Theme.of(context).colorScheme;
-
     return Scaffold(
       body: Center(
         child: Column(
@@ -18,7 +16,7 @@ class HomePage extends StatelessWidget {
                 fontWeight: FontWeight.w600,
                 fontSize: 50,
                 fontFamily: "Alegreya Sans SC",
-                color: colorScheme.primary,
+                color: const Color(0xffd600dc),
               ),
             ),
             SizedBox(height: 20),

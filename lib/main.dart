@@ -14,7 +14,7 @@ class App extends StatelessWidget {
       title: 'Black Rose',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.purple,
+          seedColor: const Color(0xffd600dc),
           brightness: Brightness.dark,
         ),
       ),
