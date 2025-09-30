@@ -67,7 +67,7 @@ class NewGameButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return FilledButton.icon(
       onPressed: newGame,
-      icon: const Icon(Icons.add, size: 35),
+      icon: const Icon(Icons.sports_esports, size: 35),
       label: Text(
         'New Game',
         style: TextStyle(fontSize: 35, fontFamily: 'Alegreya Sans SC'),
