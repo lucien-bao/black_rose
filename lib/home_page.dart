@@ -21,15 +21,36 @@ class HomePage extends StatelessWidget {
                 color: colorScheme.primary,
               ),
             ),
+            SizedBox(height: 20),
+            NewGameButton(),
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          print("pressed!");
-        },
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
+    );
+  }
+}
+
+class NewGameButton extends StatelessWidget {
+  const NewGameButton({super.key});
+
+  void newGame() {
+    //TODOimplement me
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    var colorScheme = Theme.of(context).colorScheme;
+
+    return FilledButton.icon(
+      onPressed: newGame,
+      icon: const Icon(Icons.add, size: 35),
+      label: Text(
+        'New Game',
+        style: TextStyle(
+          fontSize: 35,
+          fontFamily: "Alegreya Sans SC",
+          color: colorScheme.onSecondary,
+        ),
       ),
     );
   }
