@@ -7,51 +7,70 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Image.file(File('assets/black_rose.png')),
-                SizedBox(width: 5),
-                Text(
-                  'Black Rose',
-                  style: TextStyle(
-                    fontWeight: FontWeight.w600,
-                    fontSize: 50,
-                    fontFamily: 'Alegreya Sans SC',
-                    color: const Color(0xffd600dc),
-                  ),
-                ),
-              ],
-            ),
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        return Scaffold(
+          body: Row(
+            children: [
+              SizedBox(
+                width: constraints.maxWidth > 200
+                    ? constraints.maxWidth * 0.25
+                    : 50,
+              ),
+              Expanded(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: <Widget>[
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Image.file(File('assets/black_rose.png')),
+                        SizedBox(width: 5),
+                        Text(
+                          'Black Rose',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w600,
+                            fontSize: 50,
+                            fontFamily: 'Alegreya Sans SC',
+                            color: const Color(0xffd600dc),
+                          ),
+                        ),
+                      ],
+                    ),
 
-            SizedBox(height: 20),
-            NewGameButton(),
-            SizedBox(height: 20),
-            MenuButton(
-              icon: Icons.person,
-              text: 'Players',
-              callbackFn: () => {},
-            ),
-            SizedBox(height: 20),
-            MenuButton(
-              icon: Icons.settings,
-              text: 'Settings',
-              callbackFn: () => {},
-            ),
-            SizedBox(height: 20),
-            MenuButton(
-              icon: Icons.question_mark,
-              text: 'Help',
-              callbackFn: () => {},
-            ),
-          ],
-        ),
-      ),
+                    SizedBox(height: 20),
+                    NewGameButton(),
+                    SizedBox(height: 20),
+                    MenuButton(
+                      icon: Icons.person,
+                      text: 'Players',
+                      callbackFn: () => {},
+                    ),
+                    SizedBox(height: 20),
+                    MenuButton(
+                      icon: Icons.settings,
+                      text: 'Settings',
+                      callbackFn: () => {},
+                    ),
+                    SizedBox(height: 20),
+                    MenuButton(
+                      icon: Icons.question_mark,
+                      text: 'Help',
+                      callbackFn: () => {},
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                width: constraints.maxWidth > 200
+                    ? constraints.maxWidth * 0.25
+                    : 50,
+              ),
+            ],
+          ),
+        );
+      },
     );
   }
 }
