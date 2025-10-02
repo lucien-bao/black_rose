@@ -5,6 +5,19 @@ import 'package:flutter/material.dart';
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
+  double getMenuWidth(double screenWidth) {
+    if (screenWidth > 800) {
+      return 400;
+    }
+    if (screenWidth > 200) {
+      return screenWidth * 0.5;
+    }
+    return screenWidth - 100;
+  }
+
+  double getMarginWidth(double screenWidth) =>
+      (screenWidth - getMenuWidth(screenWidth)) / 2;
+
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
@@ -12,11 +25,7 @@ class HomePage extends StatelessWidget {
         return Scaffold(
           body: Row(
             children: [
-              SizedBox(
-                width: constraints.maxWidth > 200
-                    ? constraints.maxWidth * 0.25
-                    : 50,
-              ),
+              SizedBox(width: getMarginWidth(constraints.maxWidth)),
               Expanded(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -62,11 +71,7 @@ class HomePage extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(
-                width: constraints.maxWidth > 200
-                    ? constraints.maxWidth * 0.25
-                    : 50,
-              ),
+              SizedBox(width: getMarginWidth(constraints.maxWidth)),
             ],
           ),
         );
