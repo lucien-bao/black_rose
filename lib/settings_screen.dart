@@ -31,18 +31,11 @@ class SettingsScreen extends StatelessWidget {
                   slivers: [
                     SliverAppBar(
                       pinned: true,
-                      expandedHeight: 100,
-                      leading: Image.file(File('assets/black_rose.png')),
-                      title: Text(
-                        'Settings',
-                        style: TextStyle(
-                          fontWeight: FontWeight.w600,
-                          fontSize: 50,
-                          fontFamily: 'Alegreya Sans SC',
-                          color: const Color(0xffd600dc),
-                        ),
-                      ),
+                      centerTitle: true,
+                      title: LogoTitle(),
                     ),
+
+                    SliverList.list(children: []),
                   ],
                 ),
               ),
@@ -51,6 +44,30 @@ class SettingsScreen extends StatelessWidget {
           ),
         );
       },
+    );
+  }
+}
+
+class LogoTitle extends StatelessWidget {
+  const LogoTitle({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Image.file(File('assets/black_rose.png')),
+        SizedBox(width: 5),
+        Text(
+          'Black Rose',
+          style: TextStyle(
+            fontWeight: FontWeight.w600,
+            fontSize: 50,
+            fontFamily: 'Alegreya Sans SC',
+            color: const Color(0xffd600dc),
+          ),
+        ),
+      ],
     );
   }
 }
