@@ -23,26 +23,29 @@ class SettingsScreen extends StatelessWidget {
     return LayoutBuilder(
       builder: (context, constraints) {
         return Scaffold(
-          body: Row(
-            children: [
-              SizedBox(width: getMarginWidth(constraints.maxWidth)),
-              Expanded(
-                child: CustomScrollView(
-                  slivers: [
-                    SliverAppBar(
-                      pinned: true,
-                      centerTitle: true,
-                      title: LogoTitle(),
-                      foregroundColor: const Color(0xffd600dc),
-                      surfaceTintColor: Colors.transparent,
-                      backgroundColor: Theme.of(context).colorScheme.surface,
-                    ),
-                    SliverList.list(children: []),
-                  ],
+          body: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 40),
+            child: Row(
+              children: [
+                SizedBox(width: getMarginWidth(constraints.maxWidth)),
+                Expanded(
+                  child: CustomScrollView(
+                    slivers: [
+                      SliverAppBar(
+                        pinned: true,
+                        centerTitle: true,
+                        title: LogoTitle(),
+                        foregroundColor: const Color(0xffd600dc),
+                        surfaceTintColor: Colors.transparent,
+                        backgroundColor: Theme.of(context).colorScheme.surface,
+                      ),
+                      SliverList.list(children: []),
+                    ],
+                  ),
                 ),
-              ),
-              SizedBox(width: getMarginWidth(constraints.maxWidth)),
-            ],
+                SizedBox(width: getMarginWidth(constraints.maxWidth)),
+              ],
+            ),
           ),
         );
       },
