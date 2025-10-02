@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:black_rose/settings_screen.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -40,21 +41,21 @@ class HomeScreen extends StatelessWidget {
                     MenuButton(
                       icon: Icons.person,
                       text: 'Players',
-                      callbackFn: () => {},
+                      destination: const SettingsScreen(),
                     ),
 
                     SizedBox(height: 20),
                     MenuButton(
                       icon: Icons.settings,
                       text: 'Settings',
-                      callbackFn: () => {},
+                      destination: const SettingsScreen(),
                     ),
 
                     SizedBox(height: 20),
                     MenuButton(
                       icon: Icons.question_mark,
                       text: 'Help',
-                      callbackFn: () => {},
+                      destination: const SettingsScreen(),
                     ),
                   ],
                 ),
@@ -117,17 +118,25 @@ class MenuButton extends StatelessWidget {
     super.key,
     required this.icon,
     required this.text,
-    required this.callbackFn,
+    required this.destination,
   });
 
   final IconData icon;
   final String text;
-  final void Function() callbackFn;
+  final Widget destination;
 
   @override
   Widget build(BuildContext context) {
     return FilledButton.tonalIcon(
-      onPressed: callbackFn,
+      onPressed: () => {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => destination,
+            barrierDismissible: true,
+          ),
+        ),
+      },
       icon: Icon(icon, size: 30),
       label: Text(
         text,
