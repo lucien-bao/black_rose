@@ -33,8 +33,10 @@ class SettingsScreen extends StatelessWidget {
                       pinned: true,
                       centerTitle: true,
                       title: LogoTitle(),
+                      foregroundColor: const Color(0xffd600dc),
+                      surfaceTintColor: Colors.transparent,
+                      backgroundColor: Theme.of(context).colorScheme.surface,
                     ),
-
                     SliverList.list(children: []),
                   ],
                 ),
@@ -59,7 +61,7 @@ class LogoTitle extends StatelessWidget {
         Image.file(File('assets/black_rose.png')),
         SizedBox(width: 5),
         Text(
-          'Black Rose',
+          'Settings',
           style: TextStyle(
             fontWeight: FontWeight.w600,
             fontSize: 50,
