@@ -31,37 +31,25 @@ class HomePage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: <Widget>[
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Image.file(File('assets/black_rose.png')),
-                        SizedBox(width: 5),
-                        Text(
-                          'Black Rose',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w600,
-                            fontSize: 50,
-                            fontFamily: 'Alegreya Sans SC',
-                            color: const Color(0xffd600dc),
-                          ),
-                        ),
-                      ],
-                    ),
+                    LogoTitle(),
 
                     SizedBox(height: 20),
                     NewGameButton(),
+
                     SizedBox(height: 20),
                     MenuButton(
                       icon: Icons.person,
                       text: 'Players',
                       callbackFn: () => {},
                     ),
+
                     SizedBox(height: 20),
                     MenuButton(
                       icon: Icons.settings,
                       text: 'Settings',
                       callbackFn: () => {},
                     ),
+
                     SizedBox(height: 20),
                     MenuButton(
                       icon: Icons.question_mark,
@@ -76,6 +64,30 @@ class HomePage extends StatelessWidget {
           ),
         );
       },
+    );
+  }
+}
+
+class LogoTitle extends StatelessWidget {
+  const LogoTitle({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Image.file(File('assets/black_rose.png')),
+        SizedBox(width: 5),
+        Text(
+          'Black Rose',
+          style: TextStyle(
+            fontWeight: FontWeight.w600,
+            fontSize: 50,
+            fontFamily: 'Alegreya Sans SC',
+            color: const Color(0xffd600dc),
+          ),
+        ),
+      ],
     );
   }
 }
