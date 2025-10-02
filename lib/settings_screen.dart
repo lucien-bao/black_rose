@@ -27,14 +27,22 @@ class SettingsScreen extends StatelessWidget {
             children: [
               SizedBox(width: getMarginWidth(constraints.maxWidth)),
               Expanded(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: <Widget>[
-                    LogoTitle(),
-
-                    SizedBox(height: 20),
-                    Text("settings screen"),
+                child: CustomScrollView(
+                  slivers: [
+                    SliverAppBar(
+                      pinned: true,
+                      expandedHeight: 100,
+                      leading: Image.file(File('assets/black_rose.png')),
+                      title: Text(
+                        'Settings',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w600,
+                          fontSize: 50,
+                          fontFamily: 'Alegreya Sans SC',
+                          color: const Color(0xffd600dc),
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               ),
@@ -43,30 +51,6 @@ class SettingsScreen extends StatelessWidget {
           ),
         );
       },
-    );
-  }
-}
-
-class LogoTitle extends StatelessWidget {
-  const LogoTitle({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Image.file(File('assets/black_rose.png')),
-        SizedBox(width: 5),
-        Text(
-          'Settings',
-          style: TextStyle(
-            fontWeight: FontWeight.w600,
-            fontSize: 50,
-            fontFamily: 'Alegreya Sans SC',
-            color: const Color(0xffd600dc),
-          ),
-        ),
-      ],
     );
   }
 }
