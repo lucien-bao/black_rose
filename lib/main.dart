@@ -1,4 +1,4 @@
-import 'package:black_rose/home_page.dart';
+import 'package:black_rose/home_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -18,7 +18,7 @@ class App extends StatelessWidget {
           brightness: Brightness.dark,
         ),
       ),
-      home: const HomePage(),
+      home: const HomeScreen(),
     );
   }
 }
