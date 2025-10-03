@@ -39,7 +39,7 @@ class SettingsScreen extends StatelessWidget {
                         surfaceTintColor: Colors.transparent,
                         backgroundColor: Theme.of(context).colorScheme.surface,
                       ),
-                      SliverList.list(children: []),
+                      SliverList.list(children: [BrightnessToggle()]),
                     ],
                   ),
                 ),
@@ -49,6 +49,44 @@ class SettingsScreen extends StatelessWidget {
           ),
         );
       },
+    );
+  }
+}
+
+class BrightnessToggle extends StatefulWidget {
+  const BrightnessToggle({super.key});
+
+  @override
+  State<BrightnessToggle> createState() => _BrightnessToggleState();
+}
+
+class _BrightnessToggleState extends State<BrightnessToggle> {
+  Brightness chosen = Brightness.dark;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(20),
+      child: SegmentedButton<Brightness>(
+        segments: [
+          ButtonSegment<Brightness>(
+            value: Brightness.light,
+            label: Text('Light'),
+            icon: Icon(Icons.light_mode),
+          ),
+          ButtonSegment<Brightness>(
+            value: Brightness.dark,
+            label: Text('Dark'),
+            icon: Icon(Icons.dark_mode),
+          ),
+        ],
+        selected: <Brightness>{chosen},
+        onSelectionChanged: (Set<Brightness> newSelection) {
+          setState(() {
+            chosen = newSelection.first;
+          });
+        },
+      ),
     );
   }
 }
