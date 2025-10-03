@@ -70,30 +70,45 @@ class _BrightnessToggleState extends State<BrightnessToggle> {
 
     return Padding(
       padding: const EdgeInsets.all(20),
-      child: SegmentedButton<Brightness>(
-        segments: [
-          ButtonSegment<Brightness>(
-            value: Brightness.light,
-            label: Text('Light'),
-            icon: Icon(Icons.light_mode),
+      child: Row(
+        children: [
+          Text(
+            'Brightness',
+            style: TextStyle(
+              fontWeight: FontWeight.w400,
+              fontSize: 20,
+              fontFamily: 'Alegreya Sans',
+            ),
           ),
-          ButtonSegment<Brightness>(
-            value: Brightness.dark,
-            label: Text('Dark'),
-            icon: Icon(Icons.dark_mode),
+          SizedBox(width: 30),
+          Expanded(
+            child: SegmentedButton<Brightness>(
+              segments: [
+                ButtonSegment<Brightness>(
+                  value: Brightness.light,
+                  label: Text('Light'),
+                  icon: Icon(Icons.light_mode),
+                ),
+                ButtonSegment<Brightness>(
+                  value: Brightness.dark,
+                  label: Text('Dark'),
+                  icon: Icon(Icons.dark_mode),
+                ),
+              ],
+              selected: <Brightness>{chosen},
+              onSelectionChanged: (Set<Brightness> newSelection) {
+                setState(() {
+                  chosen = newSelection.first;
+                  if (chosen == Brightness.light) {
+                    AdaptiveTheme.of(context).setLight();
+                  } else {
+                    AdaptiveTheme.of(context).setDark();
+                  }
+                });
+              },
+            ),
           ),
         ],
-        selected: <Brightness>{chosen},
-        onSelectionChanged: (Set<Brightness> newSelection) {
-          setState(() {
-            chosen = newSelection.first;
-            if (chosen == Brightness.light) {
-              AdaptiveTheme.of(context).setLight();
-            } else {
-              AdaptiveTheme.of(context).setDark();
-            }
-          });
-        },
       ),
     );
   }
