@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:black_rose/settings_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -80,7 +81,9 @@ class LogoTitle extends StatelessWidget {
         Image.file(File('assets/black_rose.png')),
         SizedBox(width: 5),
         Text(
-          'Black Rose',
+          AdaptiveTheme.of(context).brightness == Brightness.light
+              ? 'Light Rose'
+              : 'Black Rose',
           style: TextStyle(
             fontWeight: FontWeight.w600,
             fontSize: 50,
