@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/material.dart';
 
 class SettingsScreen extends StatelessWidget {
@@ -65,6 +66,8 @@ class _BrightnessToggleState extends State<BrightnessToggle> {
 
   @override
   Widget build(BuildContext context) {
+    chosen = AdaptiveTheme.of(context).brightness ?? chosen;
+
     return Padding(
       padding: const EdgeInsets.all(20),
       child: SegmentedButton<Brightness>(
@@ -84,6 +87,11 @@ class _BrightnessToggleState extends State<BrightnessToggle> {
         onSelectionChanged: (Set<Brightness> newSelection) {
           setState(() {
             chosen = newSelection.first;
+            if (chosen == Brightness.light) {
+              AdaptiveTheme.of(context).setLight();
+            } else {
+              AdaptiveTheme.of(context).setDark();
+            }
           });
         },
       ),
