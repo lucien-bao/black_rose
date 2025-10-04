@@ -82,7 +82,7 @@ class LogoTitle extends StatelessWidget {
         SizedBox(width: 5),
         Text(
           AdaptiveTheme.of(context).brightness == Brightness.light
-              ? 'Light Rose'
+              ? 'White Rose'
               : 'Black Rose',
           style: TextStyle(
             fontWeight: FontWeight.w600,
