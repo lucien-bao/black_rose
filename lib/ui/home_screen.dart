@@ -1,6 +1,3 @@
-import 'dart:io';
-
-import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:black_rose/ui/core/logo_title.dart';
 import 'package:black_rose/ui/players_screen.dart';
 import 'package:black_rose/ui/settings_screen.dart';
