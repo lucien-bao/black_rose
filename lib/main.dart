@@ -1,5 +1,5 @@
 import 'package:adaptive_theme/adaptive_theme.dart';
-import 'package:black_rose/home_screen.dart';
+import 'package:black_rose/ui/home_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() async {

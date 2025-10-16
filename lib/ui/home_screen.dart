@@ -1,8 +1,8 @@
 import 'dart:io';
 
 import 'package:adaptive_theme/adaptive_theme.dart';
-import 'package:black_rose/players_screen.dart';
-import 'package:black_rose/settings_screen.dart';
+import 'package:black_rose/ui/players_screen.dart';
+import 'package:black_rose/ui/settings_screen.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
