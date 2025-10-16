@@ -1,5 +1,4 @@
-import 'dart:io';
-
+import 'package:black_rose/ui/core/logo_title.dart';
 import 'package:flutter/material.dart';
 
 class PlayersScreen extends StatelessWidget {
@@ -34,7 +33,7 @@ class PlayersScreen extends StatelessWidget {
                       SliverAppBar(
                         pinned: true,
                         centerTitle: true,
-                        title: LogoTitle(),
+                        title: LogoTitle(text: 'Players'),
                         foregroundColor: const Color(0xffd600dc),
                         surfaceTintColor: Colors.transparent,
                         backgroundColor: Theme.of(context).colorScheme.surface,
@@ -49,30 +48,6 @@ class PlayersScreen extends StatelessWidget {
           ),
         );
       },
-    );
-  }
-}
-
-class LogoTitle extends StatelessWidget {
-  const LogoTitle({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Image.file(File('assets/black_rose.png')),
-        SizedBox(width: 5),
-        Text(
-          'Players',
-          style: TextStyle(
-            fontWeight: FontWeight.w600,
-            fontSize: 50,
-            fontFamily: 'Alegreya Sans SC',
-            color: const Color(0xffd600dc),
-          ),
-        ),
-      ],
     );
   }
 }

@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:adaptive_theme/adaptive_theme.dart';
+import 'package:black_rose/ui/core/logo_title.dart';
 import 'package:black_rose/ui/players_screen.dart';
 import 'package:black_rose/ui/settings_screen.dart';
 import 'package:flutter/material.dart';
@@ -67,32 +68,6 @@ class HomeScreen extends StatelessWidget {
           ),
         );
       },
-    );
-  }
-}
-
-class LogoTitle extends StatelessWidget {
-  const LogoTitle({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Image.file(File('assets/black_rose.png')),
-        SizedBox(width: 5),
-        Text(
-          AdaptiveTheme.of(context).brightness == Brightness.light
-              ? 'White Rose'
-              : 'Black Rose',
-          style: TextStyle(
-            fontWeight: FontWeight.w600,
-            fontSize: 50,
-            fontFamily: 'Alegreya Sans SC',
-            color: const Color(0xffd600dc),
-          ),
-        ),
-      ],
     );
   }
 }

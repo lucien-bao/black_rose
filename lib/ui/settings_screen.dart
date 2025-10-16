@@ -1,6 +1,5 @@
-import 'dart:io';
-
 import 'package:adaptive_theme/adaptive_theme.dart';
+import 'package:black_rose/ui/core/logo_title.dart';
 import 'package:flutter/material.dart';
 
 class SettingsScreen extends StatelessWidget {
@@ -35,7 +34,7 @@ class SettingsScreen extends StatelessWidget {
                       SliverAppBar(
                         pinned: true,
                         centerTitle: true,
-                        title: LogoTitle(),
+                        title: LogoTitle(text: 'Settings'),
                         foregroundColor: const Color(0xffd600dc),
                         surfaceTintColor: Colors.transparent,
                         backgroundColor: Theme.of(context).colorScheme.surface,
@@ -110,30 +109,6 @@ class _BrightnessToggleState extends State<BrightnessToggle> {
           ),
         ],
       ),
-    );
-  }
-}
-
-class LogoTitle extends StatelessWidget {
-  const LogoTitle({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Image.file(File('assets/black_rose.png')),
-        SizedBox(width: 5),
-        Text(
-          'Settings',
-          style: TextStyle(
-            fontWeight: FontWeight.w600,
-            fontSize: 50,
-            fontFamily: 'Alegreya Sans SC',
-            color: const Color(0xffd600dc),
-          ),
-        ),
-      ],
     );
   }
 }
